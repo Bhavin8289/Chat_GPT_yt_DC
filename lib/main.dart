@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Open AI',
       debugShowCheckedModeBanner: false,
-      home: SplashPage(),
+      home: SplashScreen(),
     );
   }
 }
