@@ -37,7 +37,7 @@ class NetworkRequest {
             headers: map,
           ));
     } on DioError catch (exception) {
-      throw RemoteException(dioError: exception);
+      throw NetworkException(dioError: exception);
     }
     return response;
   }
@@ -59,7 +59,7 @@ class NetworkRequest {
             validateStatus: (_) => true,
           ));
     } on DioError catch (exception) {
-      throw RemoteException(dioError: exception);
+      throw NetworkException(dioError: exception);
     }
     return response;
   }
@@ -81,7 +81,7 @@ class NetworkRequest {
             validateStatus: (_) => true,
           ));
     } on DioError catch (exception) {
-      throw RemoteException(dioError: exception);
+      throw NetworkException(dioError: exception);
     }
     return response;
   }

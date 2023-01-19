@@ -1,12 +1,12 @@
-class Chat {
+class Chats {
   final String msg;
   final int chat;
-  Chat({
+  Chats({
     required this.msg,
     required this.chat,
   });
 
-  factory Chat.fromJson(Map<String, dynamic> json) => Chat(
+  factory Chats.fromJson(Map<String, dynamic> json) => Chats(
         chat: json['chat'],
         msg: json['msg'],
       );
