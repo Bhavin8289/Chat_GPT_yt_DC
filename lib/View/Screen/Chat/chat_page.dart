@@ -15,8 +15,8 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
   String messagePrompt = '';
   int tokenValue = 500;
-  List<Chats> chatList = [];
-  List<Models> modelsList = [];
+  List<Chat> chatList = [];
+  List<Model> modelsList = [];
   late SharedPreferences prefs;
   @override
   void initState() {
