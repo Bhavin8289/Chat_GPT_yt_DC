@@ -9,7 +9,7 @@ class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case chat:
-        return MaterialPageRoute(builder: (_) => const ChatPage());
+        return MaterialPageRoute(builder: (_) => const ChatScreen());
 
       default:
         throw RouteException('Route not found');

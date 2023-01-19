@@ -12,7 +12,7 @@ Future<List<Model>> submitGetModelsForm({
   required BuildContext context,
 }) async {
   //
-  NetworkClient networkClient = NetworkClient();
+  NetworkRequest networkClient = NetworkRequest();
   List<Model> modelsList = [];
   try {
     final res = await networkClient.get(
@@ -31,7 +31,7 @@ Future<List<Model>> submitGetModelsForm({
       });
       debugPrint(modelsList.toString());
     }
-  } on RemoteException catch (e) {
+  } on NetworkException catch (e) {
     Logger().e(e.dioError);
     errorMessage(context);
   }

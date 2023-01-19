@@ -5,14 +5,14 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../../../Network/Admob_service_helper.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeScreen> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomeScreen> {
   static AdRequest request = const AdRequest(nonPersonalizedAds: true);
 
   InterstitialAd? _interstitialAd;
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   int maxFailedLoadAttempts = 4;
 
   final BannerAd myBanner = BannerAd(
-    adUnitId: AdMobService.bannerAdUnitId ?? '',
+    adUnitId: AdService.bannerAdUnitId ?? '',
     size: AdSize.fullBanner,
     request: const AdRequest(),
     listener: const BannerAdListener(),
@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
 
   void _createInterstitialAd() {
     InterstitialAd.load(
-        adUnitId: AdMobService.interstitialAdUnitId ?? '',
+        adUnitId: AdService.interstitialAdUnitId ?? '',
         request: request,
         adLoadCallback: InterstitialAdLoadCallback(
           onAdLoaded: (InterstitialAd ad) {
@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ChatPage(),
+                    builder: (context) => const ChatScreen(),
                   ),
                 );
               },

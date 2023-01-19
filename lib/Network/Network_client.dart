@@ -1,9 +1,9 @@
 import 'package:chat_gtp/Data/Error%20Massage/App_Exceptions.dart';
 import 'package:dio/dio.dart';
 
-class NetworkClient {
+class NetworkRequest {
   Dio _dio = Dio();
-  NetworkClient({String? baseUrl}) {
+  NetworkRequest({String? baseUrl}) {
     baseUrl ??= "";
     BaseOptions baseOptions = BaseOptions(
       // receiveTimeout: 20000,
@@ -37,7 +37,7 @@ class NetworkClient {
             headers: map,
           ));
     } on DioError catch (exception) {
-      throw RemoteException(dioError: exception);
+      throw NetworkException(dioError: exception);
     }
     return response;
   }
@@ -59,7 +59,7 @@ class NetworkClient {
             validateStatus: (_) => true,
           ));
     } on DioError catch (exception) {
-      throw RemoteException(dioError: exception);
+      throw NetworkException(dioError: exception);
     }
     return response;
   }
@@ -81,7 +81,7 @@ class NetworkClient {
             validateStatus: (_) => true,
           ));
     } on DioError catch (exception) {
-      throw RemoteException(dioError: exception);
+      throw NetworkException(dioError: exception);
     }
     return response;
   }

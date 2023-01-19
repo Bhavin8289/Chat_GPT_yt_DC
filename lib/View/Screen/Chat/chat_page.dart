@@ -5,14 +5,14 @@ import '../../../../Models/Chat_model.dart.dart';
 import '../../../../Models/Model.dart.dart';
 import '../../../../Network/api_services.dart';
 
-class ChatPage extends StatefulWidget {
-  const ChatPage({super.key});
+class ChatScreen extends StatefulWidget {
+  const ChatScreen({super.key});
 
   @override
-  State<ChatPage> createState() => _ChatPageState();
+  State<ChatScreen> createState() => _ChatPageState();
 }
 
-class _ChatPageState extends State<ChatPage> {
+class _ChatPageState extends State<ChatScreen> {
   String messagePrompt = '';
   int tokenValue = 500;
   List<Chat> chatList = [];
