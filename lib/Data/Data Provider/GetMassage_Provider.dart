@@ -39,7 +39,7 @@ Future<List<Chat>> submitGetChatsForm({
       });
       debugPrint(chatList.toString());
     }
-  } on RemoteException catch (e) {
+  } on NetworkException catch (e) {
     Logger().e(e.dioError);
     errorMessage(context);
   }

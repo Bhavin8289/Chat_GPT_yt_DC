@@ -4,7 +4,7 @@ void errorMessage(BuildContext context) {
   ScaffoldMessenger.of(context).showSnackBar(
     const SnackBar(
       content: Text("Something went wrong. please try again later"),
-      backgroundColor: Colors.redAccent,
+      backgroundColor: Colors.blueGrey,
     ),
   );
   Navigator.pop(context);
