@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   int maxFailedLoadAttempts = 4;
 
   final BannerAd myBanner = BannerAd(
-    adUnitId: AdMobService.bannerAdUnitId ?? '',
+    adUnitId: AdService.bannerAdUnitId ?? '',
     size: AdSize.fullBanner,
     request: const AdRequest(),
     listener: const BannerAdListener(),
@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
 
   void _createInterstitialAd() {
     InterstitialAd.load(
-        adUnitId: AdMobService.interstitialAdUnitId ?? '',
+        adUnitId: AdService.interstitialAdUnitId ?? '',
         request: request,
         adLoadCallback: InterstitialAdLoadCallback(
           onAdLoaded: (InterstitialAd ad) {

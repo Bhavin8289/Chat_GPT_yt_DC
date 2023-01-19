@@ -2,7 +2,7 @@ import 'dart:io' show Platform;
 
 import 'package:chat_gtp/Data/Utilites/AppConstant.dart';
 
-class AdMobService {
+class AdService {
   static String? get bannerAdUnitId {
     if (Platform.isAndroid) {
       return ANDROID_BANNER_ADD_ID;
