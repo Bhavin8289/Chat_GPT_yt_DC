@@ -8,7 +8,7 @@ import 'package:chat_gtp/Network/network_client.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 
-Future<List<Chat>> submitGetChatsForm({
+Future<List<Chats>> submitGetChatsForm({
   required BuildContext context,
   required String prompt,
   required int tokenValue,
@@ -16,7 +16,7 @@ Future<List<Chat>> submitGetChatsForm({
 }) async {
   //
   NetworkClient networkClient = NetworkClient();
-  List<Chat> chatList = [];
+  List<Chats> chatList = [];
   try {
     final res = await networkClient.post(
       "${BASE_URL}completions",
@@ -32,7 +32,7 @@ Future<List<Chat>> submitGetChatsForm({
     debugPrint(mp.toString());
     if (mp['choices'].length > 0) {
       chatList = List.generate(mp['choices'].length, (i) {
-        return Chat.fromJson(<String, dynamic>{
+        return Chats.fromJson(<String, dynamic>{
           'msg': mp['choices'][i]['text'],
           'chat': 1,
         });
@@ -46,12 +46,12 @@ Future<List<Chat>> submitGetChatsForm({
   return chatList;
 }
 
-Future<List<Model>> submitGetModelsForm({
+Future<List<Models>> submitGetModelsForm({
   required BuildContext context,
 }) async {
   //
   NetworkClient networkClient = NetworkClient();
-  List<Model> modelsList = [];
+  List<Models> modelsList = [];
   try {
     final res = await networkClient.get(
       "${BASE_URL}models",
@@ -61,7 +61,7 @@ Future<List<Model>> submitGetModelsForm({
     debugPrint(mp.toString());
     if (mp['data'].length > 0) {
       modelsList = List.generate(mp['data'].length, (i) {
-        return Model.fromJson(<String, dynamic>{
+        return Models.fromJson(<String, dynamic>{
           'id': mp['data'][i]['id'],
           'created': mp['data'][i]['created'],
           'root': mp['data'][i]['root'],

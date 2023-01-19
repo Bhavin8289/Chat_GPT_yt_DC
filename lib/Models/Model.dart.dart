@@ -1,15 +1,15 @@
-class Models {
+class Model {
   final String id;
   final int created;
   final String root;
 
-  Models({
+  Model({
     required this.id,
     required this.root,
     required this.created,
   });
 
-  factory Models.fromJson(Map<String, dynamic> json) => Models(
+  factory Model.fromJson(Map<String, dynamic> json) => Model(
         id: json['id'],
         root: json['root'],
         created: json['created'],

@@ -8,7 +8,7 @@ import 'package:chat_gtp/network/Network_client.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 
-Future<List<Chat>> submitGetChatsForm({
+Future<List<Chats>> submitGetChatsForm({
   required BuildContext context,
   required String prompt,
   required int tokenValue,
@@ -16,7 +16,7 @@ Future<List<Chat>> submitGetChatsForm({
 }) async {
   //
   NetworkClient networkClient = NetworkClient();
-  List<Chat> chatList = [];
+  List<Chats> chatList = [];
   try {
     final res = await networkClient.post(
       "https://api.openai.com/v1/completions",
@@ -32,7 +32,7 @@ Future<List<Chat>> submitGetChatsForm({
     debugPrint(mp.toString());
     if (mp['choices'].length > 0) {
       chatList = List.generate(mp['choices'].length, (i) {
-        return Chat.fromJson(<String, dynamic>{
+        return Chats.fromJson(<String, dynamic>{
           'msg': mp['choices'][i]['text'],
           'chat': 1,
         });
