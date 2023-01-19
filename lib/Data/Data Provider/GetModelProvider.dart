@@ -12,7 +12,7 @@ Future<List<Model>> submitGetModelsForm({
   required BuildContext context,
 }) async {
   //
-  NetworkRequest networkClient = NetworkRequest();
+  NetworkClient networkClient = NetworkClient();
   List<Model> modelsList = [];
   try {
     final res = await networkClient.get(

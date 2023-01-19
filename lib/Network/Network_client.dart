@@ -1,9 +1,9 @@
 import 'package:chat_gtp/Data/Error%20Massage/App_Exceptions.dart';
 import 'package:dio/dio.dart';
 
-class NetworkRequest {
+class NetworkClient {
   Dio _dio = Dio();
-  NetworkRequest({String? baseUrl}) {
+  NetworkClient({String? baseUrl}) {
     baseUrl ??= "";
     BaseOptions baseOptions = BaseOptions(
       // receiveTimeout: 20000,

@@ -4,7 +4,8 @@ import 'package:chat_gtp/Data/Error%20Massage/App_Exceptions.dart';
 import 'package:chat_gtp/Data/Utilites/AppConstant.dart';
 import 'package:chat_gtp/Models/Chat_model.dart.dart';
 import 'package:chat_gtp/Models/Model.dart.dart';
-import 'package:chat_gtp/Network/Network_client.dart';
+import 'package:chat_gtp/network/Network_client.dart';
+
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 
