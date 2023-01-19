@@ -8,12 +8,12 @@ import 'package:chat_gtp/Network/Network_client.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 
-Future<List<Models>> submitGetModelsForm({
+Future<List<Model>> submitGetModelsForm({
   required BuildContext context,
 }) async {
   //
   NetworkRequest networkClient = NetworkRequest();
-  List<Models> modelsList = [];
+  List<Model> modelsList = [];
   try {
     final res = await networkClient.get(
       "https://api.openai.com/v1/models",
@@ -23,7 +23,7 @@ Future<List<Models>> submitGetModelsForm({
     debugPrint(mp.toString());
     if (mp['data'].length > 0) {
       modelsList = List.generate(mp['data'].length, (i) {
-        return Models.fromJson(<String, dynamic>{
+        return Model.fromJson(<String, dynamic>{
           'id': mp['data'][i]['id'],
           'created': mp['data'][i]['created'],
           'root': mp['data'][i]['root'],
