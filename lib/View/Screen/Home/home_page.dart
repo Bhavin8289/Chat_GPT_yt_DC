@@ -4,14 +4,14 @@ import 'package:chat_gtp/network/admob_service_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeScreen> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomeScreen> {
   static AdRequest request = const AdRequest(nonPersonalizedAds: true);
 
   InterstitialAd? _interstitialAd;
@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ChatPage(),
+                    builder: (context) => const ChatScreen(),
                   ),
                 );
               },
